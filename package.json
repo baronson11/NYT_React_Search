@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/smibbie/NYT_React_Search/issues"
   },
-  "homepage": "https://github.com/smibbie/NYT_React_Search#readme"
+  "homepage": "https://github.com/smibbie/NYT_React_Search#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.3.1"
+  }
 }

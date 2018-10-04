@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Database Connection ---------------------------
-mongoose.connect(
+mongoose.connect({ useNewUrlParser: true },
   process.env.MONGODB_URI || "mongodb://localhost/nytreact"
 );
 
