@@ -21,7 +21,6 @@
     "axios": "^0.18.0",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
-    "mongoose": "^5.3.1",
-    "newyorktimes": "0.0.2"
+    "mongoose": "^5.3.1"
   }
 }
