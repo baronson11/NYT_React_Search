@@ -5,7 +5,7 @@ import Jumbotron from "../../components/Jumbotron";
 import SaveBtn from "../../components/SaveBtn"
 import { Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import { Input,FormBtn } from "../../components/Form";
+import { Input, FormBtn, ClearBtn } from "../../components/Form";
 
 class Home extends Component {
   state = {
@@ -34,6 +34,13 @@ class Home extends Component {
     })
   }
 
+  clearSearch = (e) => {
+    e.preventDefault();
+    this.setState({
+      articles: []
+    });
+  }
+
   getSearch = (e) => {
     e.preventDefault();
     const {title, number, beginDate, endDate} = this.state;
@@ -42,7 +49,6 @@ class Home extends Component {
         articles: data.data.response.docs
       });
     });
-
   }
 
   saveArticle(title, date, url) {
@@ -72,6 +78,7 @@ class Home extends Component {
             <Input name="beginDate" value={this.state.beginDate} onChange={this.handleInputs} label="Start Year (Optional)" placeholder="YYYYMMDD" />
             <Input name="endDate" value={this.state.endDate} onChange={this.handleInputs} label="End Year (Optional)" placeholder="YYYYMMDD" />
             <FormBtn onClick={this.getSearch}> Get New Articles </FormBtn>
+            <ClearBtn onClick={this.clearSearch}> Clear Articles </ClearBtn>
           </form>
         </Container>
         <Container >
