@@ -1,5 +1,5 @@
 // Dependencies -------------------------------------
-const db = require("../models");
+const db = require("../model");
 
 // Article Controller Methods -----------------------
 module.exports = {
@@ -19,12 +19,6 @@ module.exports = {
   create: (req, res) => {
     db.Article
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  update: (req, res) => {
-    db.Article
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
