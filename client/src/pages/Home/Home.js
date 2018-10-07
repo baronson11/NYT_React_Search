@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import SaveBtn from "../../components/SaveBtn"
-import { Container } from "../../components/Grid";
+import { Container, Column } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, FormBtn, ClearBtn } from "../../components/Form";
 
@@ -73,6 +73,7 @@ class Home extends Component {
       <Container fluid>
         <Jumbotron>New York Times Archives</Jumbotron>
         <Container>
+        <Column width={'30%'} float={'left'}>
           <form>
             <Input name="title" value={this.state.title} onChange={this.handleInputs} label="Title Search" placeholder="Title" />
             <Input name="beginDate" value={this.state.beginDate} onChange={this.handleInputs} label="Start Year (Optional)" placeholder="YYYYMMDD" />
@@ -80,9 +81,11 @@ class Home extends Component {
             <FormBtn onClick={this.getSearch}> Get New Articles </FormBtn>
             <ClearBtn onClick={this.clearSearch}> Clear Articles </ClearBtn>
           </form>
+        </Column>
         </Container>
-        <Container >
-          <h3>Search Results: </h3>
+        <Column float={'right'}>
+        <Container>
+          <h3 style={{fontFamily: 'Abril Fatface', fontSize: '2rem'}}>Search Results: </h3>
         {this.state.articles.length ? (
               <List>
                 {this.state.articles.map((article, i) => (
@@ -93,11 +96,11 @@ class Home extends Component {
                 ))}
               </List>
             ) : (
-              <h3>No Search Results to Display</h3>
+              <h3 style={{fontSize: '1rem', fontFamily: 'sans-serif'}}>No Search Results to Display</h3>
             )}
         </Container>
-        <Container >
-          <h3>Saved Articles: </h3>
+        <Container>
+          <h3 style={{fontFamily: 'Abril Fatface', fontSize: '2rem'}}>Saved Articles: </h3>
           { this.state.savedArticles.length ? (
           <List>
              {this.state.savedArticles.map((article, i) => (
@@ -107,8 +110,9 @@ class Home extends Component {
               </ListItem>
             ))}
           </List>
-          ): ( <h3> No Saved Articles</h3> )}
+        ): ( <h3 style={{fontSize: '1rem', fontFamily: 'sans-serif'}}> No Saved Articles</h3> )}
         </Container>
+        </Column>
       </Container>
 
     );
