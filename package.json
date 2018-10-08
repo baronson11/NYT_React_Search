@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "### Overview",
   "main": "server.js",
+  "private": true,
+  "proxy": "http://localhost:3000/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -21,6 +23,9 @@
     "axios": "^0.18.0",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
-    "mongoose": "^5.3.1"
+    "gh-pages": "^2.0.0",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.3.1",
+    "react-scripts": "^2.0.4"
   }
 }

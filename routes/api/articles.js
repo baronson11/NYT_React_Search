@@ -14,16 +14,3 @@ router.route("/:id")
 
 // Export --------------------------------------------
 module.exports = router;
-
-
-// Built by LucyBot. www.lucybot.com
-// request.get({
-//   url: "https://api.nytimes.com/svc/search/v2/articlesearch.json",
-//   qs: {
-//     'api-key': "2e0b1078b6234bc2b219ee5e793572d6",
-//     'q': "kavanaugh"
-//   },
-// }, (err, response, body) {
-//   let results = JSON.parse(body);
-//   console.log(results);
-// })

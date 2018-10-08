@@ -5,9 +5,10 @@ const Schema = mongoose.Schema;
 // Schema -----------------------------------------
 const articleSchema = new Schema({
   title: { type: String, required: true },
-  author: { type: String, required: true },
+  author: { type: String },
   synopsis: String,
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+  url: { type: String }
 });
 
 // Article ----------------------------------------
